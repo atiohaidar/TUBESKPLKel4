@@ -34,11 +34,28 @@ namespace TUBESKPLKel4
             }
             peminjamanService.perpanjangPeminjaman(kode_peminjaman, deadline);
             MessageBox.Show("berhasil diperpanjang", "konfirmasi");
+            refreshDataGridView();
         }
 
         private void btnDikembalikan_Click(object sender, EventArgs e)
         {
+            int kode_peminjaman = 0;
+            int kode_buku = 0;
+            for (int i = 0; i < dataGridViewPeminjaman.Rows.Count; i += 1)
+            {
+                if (dataGridViewPeminjaman.Rows[i].Selected)
+                {
+                    kode_peminjaman = int.Parse(dataGridViewPeminjaman.Rows[i].Cells[0].Value.ToString()); // buat ngambil id
+                    kode_buku = int.Parse(dataGridViewPeminjaman.Rows[i].Cells[4].Value.ToString());
+
+
+
+                }
+            }
+
+            peminjamanService.pengembalian(kode_peminjaman, kode_buku);
             MessageBox.Show("berhasil dikembalikan", "konfirmasi");
+            refreshDataGridView();
         }
 
         private void dataGridViewPeminjaman_CellContentClick(object sender, DataGridViewCellEventArgs e)

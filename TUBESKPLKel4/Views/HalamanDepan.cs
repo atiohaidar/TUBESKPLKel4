@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUBESKPLKel4.Views;
 
 namespace TUBESKPLKel4
 {
@@ -31,10 +32,7 @@ namespace TUBESKPLKel4
         private void Pinjam_MouseClick(object sender, MouseEventArgs e)
         {
 
-            PeminjamanService peminjamanService = new PeminjamanService();
-
-            List<String> a = peminjamanService.checkBukuyngAkanDipinjam(4);
-            MessageBox.Show(a[1]);
+            new TambahPeminjaman().Show();
         }
 
         private void Riwayat_MouseClick(object sender, MouseEventArgs e)
