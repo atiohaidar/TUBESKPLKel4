@@ -47,6 +47,31 @@ namespace TUBESKPLKel4.Repository
             } catch (Exception ex) { throw ex; } finally { conn.Close(); }
             
         }
+
+        public Peminjaman getPeminjamanByKode(int kode)
+        {
+            this.conn.Open();
+            try
+            {
+                Peminjaman peminjaman = null;
+                String query = string.Format("select * from peminjaman where kode_peminjaman = '{0}'", (object)kode);
+                var cmd = new MySqlCommand(query, conn);
+                var reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    int kode_peminjaman = reader.GetInt32(0);
+                    String nama_peminjam = reader.GetString(1);
+                    DateTime waktu_melakukan_peminjaman = reader.GetDateTime(2);
+                    DateTime deadline_peminjaman = reader.GetDateTime(3);
+                    String status = reader.GetString(4);
+                    int kode_buku = reader.GetInt32(5);
+                    peminjaman = new Peminjaman(kode_peminjaman, nama_peminjam, waktu_melakukan_peminjaman, deadline_peminjaman, status, kode_buku);
+                  
+                }
+                return peminjaman;
+            } catch (Exception ex) { throw ex; } finally { conn.Close(); }
+        }
         public void updateDeadlinePengembalian(int kode_peminjaman, DateTime deadline_peminjaman)
         {
             conn.Open();

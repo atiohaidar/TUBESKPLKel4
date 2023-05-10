@@ -46,7 +46,14 @@ namespace TUBESKPLKel4.Service
         {
             try
             {
-                peminjamanRepository.updateDeadlinePengembalian(kode_peminjaman, deadline_peminjaman.AddDays(90));
+                Peminjaman peminjaman = peminjamanRepository.getPeminjamanByKode(kode_peminjaman);
+                if (peminjaman.status != "selesai")
+                {
+                    peminjamanRepository.updateDeadlinePengembalian(kode_peminjaman, deadline_peminjaman.AddDays(90));
+                } else
+                {
+                    throw new Exception("Peminjaman sudah selesai");
+                }
             } catch (Exception ex) { throw ex; }
 
         }

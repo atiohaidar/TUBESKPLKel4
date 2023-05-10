@@ -34,9 +34,16 @@ namespace TUBESKPLKel4
 
                 }
             }
-            peminjamanService.perpanjangPeminjaman(kode_peminjaman, deadline);
-            MessageBox.Show("berhasil diperpanjang", "konfirmasi");
-            refreshDataGridView();
+            try
+            {
+
+                peminjamanService.perpanjangPeminjaman(kode_peminjaman, deadline);
+                MessageBox.Show("berhasil diperpanjang", "konfirmasi");
+                refreshDataGridView();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error");
+            }
         }
 
         private void btnDikembalikan_Click(object sender, EventArgs e)
