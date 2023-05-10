@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUBESKPLKel4.Views;
 
 namespace TUBESKPLKel4
 {
@@ -16,7 +17,7 @@ namespace TUBESKPLKel4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HalamanDepan());
+            Application.Run(new Login());
         }
     }
 }

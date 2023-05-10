@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TUBESKPLKel4
+namespace TUBESKPLKel4.Model
 {
     internal class Peminjaman
     {

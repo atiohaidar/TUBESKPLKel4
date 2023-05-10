@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using TUBESKPLKel4.Service;
+using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4
 {
