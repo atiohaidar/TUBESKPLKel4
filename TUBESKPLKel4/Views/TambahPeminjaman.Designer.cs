@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblPengarang = new System.Windows.Forms.Label();
+            this.lblNamaBuku = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBatal = new System.Windows.Forms.Button();
@@ -36,14 +44,6 @@
             this.txtKodeBuku = new System.Windows.Forms.TextBox();
             this.txtNamaPeminjam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblNamaBuku = new System.Windows.Forms.Label();
-            this.lblPengarang = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,85 @@
             this.panel1.Size = new System.Drawing.Size(560, 315);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblStatus);
+            this.groupBox1.Controls.Add(this.lblPengarang);
+            this.groupBox1.Controls.Add(this.lblNamaBuku);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(286, 53);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 187);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(81, 94);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(10, 13);
+            this.lblStatus.TabIndex = 6;
+            this.lblStatus.Text = "-";
+            // 
+            // lblPengarang
+            // 
+            this.lblPengarang.AutoSize = true;
+            this.lblPengarang.Location = new System.Drawing.Point(81, 69);
+            this.lblPengarang.Name = "lblPengarang";
+            this.lblPengarang.Size = new System.Drawing.Size(10, 13);
+            this.lblPengarang.TabIndex = 5;
+            this.lblPengarang.Text = "-";
+            // 
+            // lblNamaBuku
+            // 
+            this.lblNamaBuku.AutoSize = true;
+            this.lblNamaBuku.Location = new System.Drawing.Point(81, 46);
+            this.lblNamaBuku.Name = "lblNamaBuku";
+            this.lblNamaBuku.Size = new System.Drawing.Size(10, 13);
+            this.lblNamaBuku.TabIndex = 4;
+            this.lblNamaBuku.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Status:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Pengarang:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nama Buku: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Keterangan Buku";
             // 
             // label3
             // 
@@ -95,6 +174,7 @@
             this.btnBatal.TabIndex = 9;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = false;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             this.btnBatal.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnBatal_MouseClick);
             // 
             // btnPinjam
@@ -137,85 +217,6 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pinjam Buku";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblStatus);
-            this.groupBox1.Controls.Add(this.lblPengarang);
-            this.groupBox1.Controls.Add(this.lblNamaBuku);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(286, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 187);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Keterangan Buku";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nama Buku: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Pengarang:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Status:";
-            // 
-            // lblNamaBuku
-            // 
-            this.lblNamaBuku.AutoSize = true;
-            this.lblNamaBuku.Location = new System.Drawing.Point(81, 46);
-            this.lblNamaBuku.Name = "lblNamaBuku";
-            this.lblNamaBuku.Size = new System.Drawing.Size(10, 13);
-            this.lblNamaBuku.TabIndex = 4;
-            this.lblNamaBuku.Text = "-";
-            // 
-            // lblPengarang
-            // 
-            this.lblPengarang.AutoSize = true;
-            this.lblPengarang.Location = new System.Drawing.Point(81, 69);
-            this.lblPengarang.Name = "lblPengarang";
-            this.lblPengarang.Size = new System.Drawing.Size(10, 13);
-            this.lblPengarang.TabIndex = 5;
-            this.lblPengarang.Text = "-";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(81, 94);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "-";
             // 
             // TambahPeminjaman
             // 

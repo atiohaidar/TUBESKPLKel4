@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using TUBESKPLKel4.Service;
-using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4
 {
@@ -17,7 +15,6 @@ namespace TUBESKPLKel4
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
 
         }
 
@@ -35,16 +32,9 @@ namespace TUBESKPLKel4
 
                 }
             }
-            try
-            {
-
-                peminjamanService.perpanjangPeminjaman(kode_peminjaman, deadline);
-                MessageBox.Show("berhasil diperpanjang", "konfirmasi");
-                refreshDataGridView();
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error");
-            }
+            peminjamanService.perpanjangPeminjaman(kode_peminjaman, deadline);
+            MessageBox.Show("berhasil diperpanjang", "konfirmasi");
+            refreshDataGridView();
         }
 
         private void btnDikembalikan_Click(object sender, EventArgs e)

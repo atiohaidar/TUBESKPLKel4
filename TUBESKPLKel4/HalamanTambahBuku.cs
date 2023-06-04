@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TUBESKPLKel4.Service;
-using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4
 {
@@ -17,7 +15,7 @@ namespace TUBESKPLKel4
         BukuService bukuService;
         public HalamanTambahBuku()
         {
-            this.bukuService= new BukuService(new Repository.BukuRepository());
+            this.bukuService= new BukuService();
             InitializeComponent();
         }
 
@@ -53,23 +51,36 @@ namespace TUBESKPLKel4
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            try
-            {
-               
-                bukuService.addBuku(txtJudul.Text, txtPengarang.Text, (int)numKuantitas.Value);
-                MessageBox.Show("tersimpan ya ges", "informasi");
-                this.Close();
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error");
-            }
+            bukuService.addBuku(txtJudul.Text, txtPengarang.Text, (int)numKuantitas.Value);
+            MessageBox.Show("tersimpan ya ges", "informasi");
+            this.Close();
 
 
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void HalamanTambahBuku_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPengarang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

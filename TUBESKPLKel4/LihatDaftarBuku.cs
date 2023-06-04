@@ -8,8 +8,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TUBESKPLKel4.Service;
-using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4
 {
@@ -18,7 +16,7 @@ namespace TUBESKPLKel4
         BukuService bukuService;
         public LihatDaftarBuku()
         {
-            bukuService = new BukuService(new Repository.BukuRepository());
+            bukuService = new BukuService();
             InitializeComponent();
         }
 
@@ -54,51 +52,38 @@ namespace TUBESKPLKel4
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            try
+            int kode = 0;
+            for (int i = 0; i < dataGridViewBuku.Rows.Count; i += 1)
             {
-                int kode = 0;
-                for (int i = 0; i < dataGridViewBuku.Rows.Count; i += 1)
+                if (dataGridViewBuku.Rows[i].Selected)
                 {
-                    if (dataGridViewBuku.Rows[i].Selected)
-                    {
-                        kode = int.Parse(dataGridViewBuku.Rows[i].Cells[0].Value.ToString()); // buat ngambil id
-                    }
+                    kode = int.Parse(dataGridViewBuku.Rows[i].Cells[0].Value.ToString()); // buat ngambil id
+
+
+
                 }
-
-
-                bukuService.deleteBuku(kode);
-                MessageBox.Show("Berhasil terhapus", "konfirmasi");
-                refreshDataGridView();
-            } catch (Exception ex) {
-                MessageBox.Show("Something Went Error!", "error");
             }
-            
+            bukuService.deleteBuku(kode);
+            MessageBox.Show("Berhasil terhapus", "konfirmasi");
+            refreshDataGridView();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
+            int kode = 0;
+            for (int i = 0; i < dataGridViewBuku.Rows.Count; i += 1)
             {
-                int kode = 0;
-                for (int i = 0; i < dataGridViewBuku.Rows.Count; i += 1)
+                if (dataGridViewBuku.Rows[i].Selected)
                 {
-                    if (dataGridViewBuku.Rows[i].Selected)
-                    {
-                        kode = int.Parse(dataGridViewBuku.Rows[i].Cells[0].Value.ToString()); // buat ngambil id
+                    kode = int.Parse(dataGridViewBuku.Rows[i].Cells[0].Value.ToString()); // buat ngambil id
+                 
+                   
 
-
-
-                    }
                 }
-                bukuService.editBuku(kode, txtJudulBuku.Text, txtPengarang.Text, int.Parse(numKuantitas.Value.ToString()));
-                MessageBox.Show("Berhasil Teredit", "konfirmasi");
-                refreshDataGridView();
-            } catch (System.Exception ex)
-            {
-                MessageBox.Show("Something Went Error!", "error");
             }
-            
+            bukuService.editBuku(kode, txtJudulBuku.Text, txtPengarang.Text, int.Parse(numKuantitas.Value.ToString()));
+            MessageBox.Show("Berhasil Teredit", "konfirmasi");
+            refreshDataGridView();
         }
 
         private void txt_TextChanged(object sender, EventArgs e)
@@ -122,6 +107,9 @@ namespace TUBESKPLKel4
                 newRow[2] = buku.pengarang;
                 newRow[3] = buku.kuantitas.ToString();
                 dataGridViewBuku.Rows.Add(newRow);
+
+
+
             }
         }
 
@@ -142,9 +130,13 @@ namespace TUBESKPLKel4
             }
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void testPanel1_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }

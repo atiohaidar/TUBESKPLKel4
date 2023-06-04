@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numKuantitas = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,10 +41,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.numKuantitas = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numKuantitas)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,13 @@
             this.panel1.Size = new System.Drawing.Size(560, 315);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // numKuantitas
+            // 
+            this.numKuantitas.Location = new System.Drawing.Point(22, 215);
+            this.numKuantitas.Name = "numKuantitas";
+            this.numKuantitas.Size = new System.Drawing.Size(448, 20);
+            this.numKuantitas.TabIndex = 13;
             // 
             // label4
             // 
@@ -171,6 +178,7 @@
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Home >";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel2
             // 
@@ -182,13 +190,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(558, 40);
             this.panel2.TabIndex = 15;
-            // 
-            // numKuantitas
-            // 
-            this.numKuantitas.Location = new System.Drawing.Point(22, 215);
-            this.numKuantitas.Name = "numKuantitas";
-            this.numKuantitas.Size = new System.Drawing.Size(448, 20);
-            this.numKuantitas.TabIndex = 13;
             // 
             // HalamanTambahBuku
             // 
@@ -202,9 +203,9 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numKuantitas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numKuantitas)).EndInit();
             this.ResumeLayout(false);
 
         }

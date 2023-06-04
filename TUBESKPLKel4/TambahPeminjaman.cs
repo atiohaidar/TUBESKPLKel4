@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TUBESKPLKel4.Service;
-using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4.Views
 {
@@ -40,9 +38,9 @@ namespace TUBESKPLKel4.Views
             if (buku != null)
             {
 
-                lblNamaBuku.Text = buku[0];
-                lblPengarang.Text = buku[1];
-                lblStatus.Text = buku[2];
+            lblNamaBuku.Text = buku[0];
+            lblPengarang.Text = buku[1];
+            lblStatus.Text = buku[2];
             }
             else
             {
@@ -55,26 +53,34 @@ namespace TUBESKPLKel4.Views
 
         private void btnPinjam_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                peminjamanService.createPeminjaman(txtNamaPeminjam.Text.ToString(), int.Parse(txtKodeBuku.Text.ToString()));
-                MessageBox.Show("tersimpan ya ges", "informasi");
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error");
-            } finally
-            {
-                this.Close();
-            }
+            peminjamanService.createPeminjaman(txtNamaPeminjam.Text.ToString(), int.Parse(txtKodeBuku.Text.ToString()));
+            MessageBox.Show("tersimpan ya ges", "informasi");
+            this.Close();
+
         }
 
         private void btnBatal_MouseClick(object sender, MouseEventArgs e)
         {
+            this.Close();
         }
 
-        private void btnBatal_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPengarang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNamaPeminjam_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
