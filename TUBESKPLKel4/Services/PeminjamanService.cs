@@ -8,7 +8,7 @@ using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4.Service
 {
-    internal class PeminjamanService
+    public class PeminjamanService
     {
         public PeminjamanRepository peminjamanRepository;
         public BukuRepository bukuRepository;

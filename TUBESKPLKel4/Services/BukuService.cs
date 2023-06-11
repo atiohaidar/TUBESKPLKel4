@@ -9,7 +9,7 @@ using TUBESKPLKel4.Model;
 namespace TUBESKPLKel4.Service
 {
     // udah terverivikasi aman, (klo inputannya bener)
-    internal class BukuService
+    public class BukuService
     {
         public static BukuRepository bukuRepo;
         public BukuService(BukuRepository bRepo) { 

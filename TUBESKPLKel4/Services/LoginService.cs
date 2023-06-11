@@ -8,7 +8,7 @@ using TUBESKPLKel4.Models;
 
 namespace TUBESKPLKel4.Services
 {
-    internal class LoginService
+    public class LoginService
     {
         private UserRepository userRepo;
         private Boolean isLoggedIn;

@@ -9,7 +9,7 @@ using TUBESKPLKel4.Models;
 
 namespace TUBESKPLKel4.Repositories
 {
-    internal class UserRepository
+    public class UserRepository
     {
 
         private MySqlConnection conn;

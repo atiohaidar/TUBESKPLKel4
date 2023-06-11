@@ -9,7 +9,7 @@ using TUBESKPLKel4.Model;
 
 namespace TUBESKPLKel4.Repository
 {
-    internal class PeminjamanRepository
+    public class PeminjamanRepository
     {
         string format = "yyyy-MM-dd HH:mm:ss";
         private MySqlConnection conn;
@@ -44,7 +44,9 @@ namespace TUBESKPLKel4.Repository
 
                 }
                 return all_peminjaman;
-            } catch (Exception ex) { throw ex; } finally { conn.Close(); }
+            } catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                throw ex; } finally { conn.Close(); }
             
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUBESKPLKel4.Models
 {
-    internal class User
+    public class User
     {
         public string name, username;
         private string password;

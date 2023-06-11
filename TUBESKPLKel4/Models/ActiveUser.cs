@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUBESKPLKel4.Models
 {
-    internal class ActiveUser
+    public class ActiveUser
     {
         public static User user = new User("Nama Admin", "admin", "");
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUBESKPLKel4.Model
 {
-    internal class Buku
+    public class Buku
     {
         public int kode;
         public String nama;

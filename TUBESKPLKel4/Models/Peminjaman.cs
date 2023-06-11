@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUBESKPLKel4.Model
 {
-    internal class Peminjaman
+    public class Peminjaman
     {
         public int kode_peminjaman;
         public String nama_peminjam;
